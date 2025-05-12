@@ -1,20 +1,6 @@
 RAGify: Retrieval-Augmented Generation (RAG) System
 RAGify is a powerful Retrieval-Augmented Generation (RAG) system that combines document retrieval with natural language generation to answer user queries. By utilizing Sentence-Transformers for semantic embeddings, FAISS for efficient document retrieval, and GPT-2 for generating contextually rich responses, RAGify offers intelligent, accurate, and context-aware answers.
 
-Table of Contents
-Introduction
-
-How It Works
-
-Installation
-
-Usage
-
-System Architecture
-
-License
-
-Acknowledgements
 
 Introduction
 RAGify integrates document retrieval and natural language generation into one seamless system. It retrieves relevant documents based on user queries and generates natural language responses by leveraging powerful generative models like GPT-2. This approach ensures that responses are contextually enriched with information from the retrieved documents.
