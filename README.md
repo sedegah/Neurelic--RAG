@@ -25,7 +25,7 @@ Follow these steps to set up RAGify locally:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/RAGify.git
+git clone https://github.com/sedegah/RAGify.git
 cd RAGify
 2. Install Dependencies
 It is recommended to use a virtual environment. Install the required dependencies with:
