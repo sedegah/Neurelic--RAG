@@ -10,7 +10,7 @@ doc_embeddings = encode_docs(docs)
 index = create_index(doc_embeddings)
 
 # UI
-st.title("🧠 RAGify: Retrieval-Augmented Generation Demo")
+st.title("RAGify: Retrieval-Augmented Generation Demo")
 
 query = st.text_input("Ask a question:")
 
@@ -23,11 +23,11 @@ if query:
     for i, doc in enumerate(relevant_docs):
         st.markdown(f"**Doc {i+1}:** {doc}")
 
-    st.subheader("🧾 Answer")
+    st.subheader(" Answer")
     st.markdown(answer)
 
 # Add new document
-st.sidebar.title("📄 Add New Document")
+st.sidebar.title("Add New Document")
 new_doc = st.sidebar.text_area("Document Text")
 if st.sidebar.button("Add to Knowledge Base") and new_doc:
     with open("documents.json", "r+") as f:
