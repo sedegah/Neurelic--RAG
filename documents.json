@@ -1,0 +1,22 @@
+[
+  "A data structure is a particular way of organizing data in a computer so that it can be used efficiently. Examples include arrays, linked lists, stacks, and queues.",
+  "An operating system is system software that manages computer hardware and software resources, and provides common services for computer programs.",
+  "Computer networks allow devices to exchange data using wired or wireless technology. Protocols like TCP/IP govern how this data is transmitted.",
+  "An algorithm is a finite set of instructions that, when followed, accomplish a particular task. It is a fundamental concept in computer science.",
+  "Software engineering is the application of engineering principles to the design, development, testing, and maintenance of software systems.",
+  "Cybersecurity involves techniques and processes that protect systems, networks, and programs from digital attacks.",
+  "In machine learning, overfitting occurs when a model learns the training data too well, including noise, and performs poorly on unseen data.",
+  "L'intelligence artificielle permet aux machines de simuler l'intelligence humaine, y compris l'apprentissage et la résolution de problèmes.",
+  "La programación orientada a objetos permite organizar el código en clases y objetos, lo que facilita la reutilización y el mantenimiento.",
+  "Katika mashine za kujifunza, modeli hujifunza kutoka kwa data ili kufanya maamuzi au utabiri bila kuandikwa kwa njia ya moja kwa moja.",
+  "React is widely used in frontend development due to its component-based architecture and virtual DOM performance.",
+  "GitHub is a platform for hosting and collaborating on code projects using Git version control.",
+  "DevOps encourages collaboration between developers and IT operations, often using CI/CD pipelines for automation.",
+  "Un algoritmo de búsqueda binaria divide un conjunto de datos ordenado por la mitad para encontrar un valor objetivo eficientemente.",
+  "Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.",
+  "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.",
+  "In natural language processing, tokenization is the process of splitting text into individual words or subwords.",
+  "Cloud services like AWS and Azure provide scalable infrastructure for deploying applications globally.",
+  "In Akan: 'Nkɔmɔ anaa kasa yie a ɛkɔ so wɔ mfonini' kyerɛ 'communication systems' a ɛboa ma yɛde data to hɔ wɔ wireless ne cable.",
+  "The Turing Test, developed by Alan Turing, evaluates a machine's ability to exhibit intelligent behavior equivalent to a human."
+]
