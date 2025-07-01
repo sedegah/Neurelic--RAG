@@ -1,4 +1,3 @@
-# ragify/generation.py
 import logging
 from typing import List, Optional
 
