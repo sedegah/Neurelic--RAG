@@ -1,4 +1,4 @@
-# 🚀 RAGify
+#  RAGify
 
 *Intelligent Question-Answering with Retrieval-Augmented Generation*
 
