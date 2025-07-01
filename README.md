@@ -6,22 +6,22 @@ RAGify is a state-of-the-art Retrieval-Augmented Generation (RAG) system that re
 
 ##  Key Features
 
-- ** Semantic Understanding**: Leverages Sentence-Transformers for deep semantic query understanding
-- ** Lightning-Fast Retrieval**: FAISS-powered similarity search for instant document matching
-- ** Context-Aware Generation**: GPT-2 integration for human-like, contextual responses
-- ** Highly Customizable**: Easily adaptable to any domain or use case
-- ** Scalable Architecture**: Handles large document collections efficiently
+-  Semantic Understanding: Leverages Sentence-Transformers for deep semantic query understanding
+-  Lightning-Fast Retrieval: FAISS-powered similarity search for instant document matching
+-  Context-Aware Generation: GPT-2 integration for human-like, contextual responses
+-  Highly Customizable: Easily adaptable to any domain or use case
+-  Scalable Architecture: Handles large document collections efficiently
 
 ##  How RAGify Works
 
 RAGify transforms user questions into intelligent answers through a sophisticated 6-step process:
 
-1. ** Query Input** → User submits a natural language question
-2. ** Semantic Encoding** → Query vectorized using advanced embeddings
-3. ** Smart Retrieval** → FAISS identifies most relevant documents
-4. ** Context Fusion** → Query and documents merged for rich context
-5. ** Intelligent Generation** → GPT-2 crafts contextual responses
-6. ** Natural Output** → Human-readable answer delivered to user
+1. Query Input→ User submits a natural language question
+2. Semantic Encoding → Query vectorized using advanced embeddings
+3. Smart Retrieval → FAISS identifies most relevant documents
+4. Context Fusion → Query and documents merged for rich context
+5. Intelligent Generation → GPT-2 crafts contextual responses
+6. Natural Output → Human-readable answer delivered to user
 
 ##  Quick Start
 
