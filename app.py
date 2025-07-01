@@ -1,38 +1,24 @@
-import streamlit as st
+# app.py  (Streamlit demo for the new package)
 import json
-from ragify_engine import load_documents, encode_docs, create_index, retrieve, generate_answer
+import streamlit as st
+from ragify import RAGSystem
 
-st.set_page_config(page_title="RAGify", layout="wide")
+st.set_page_config(page_title="RAGify Demo", layout="wide")
 
-# Load documents
-docs = load_documents()
-doc_embeddings = encode_docs(docs)
-index = create_index(doc_embeddings)
+# --- Initialise system & index ---
+rag  = RAGSystem()                      # default config
+docs = json.load(open("documents.json"))
+rag.index_documents(docs)
 
-# UI
-st.title("RAGify: Retrieval-Augmented Generation Demo")
-
-query = st.text_input("Ask a question:")
+# --- UI ---
+st.title("🔍 RAGify – Ask your knowledge base")
+query = st.text_input("Enter your question:")
 
 if query:
-    with st.spinner("Retrieving and generating answer..."):
-        relevant_docs = retrieve(query, docs, doc_embeddings, index)
-        answer = generate_answer(query, relevant_docs)
-
-    st.subheader("🔍 Retrieved Documents")
-    for i, doc in enumerate(relevant_docs):
-        st.markdown(f"**Doc {i+1}:** {doc}")
-
-    st.subheader(" Answer")
+    with st.spinner("Thinking…"):
+        answer = rag.query(query)
+    st.subheader("Answer")
     st.markdown(answer)
 
-# Add new document
-st.sidebar.title("Add New Document")
-new_doc = st.sidebar.text_area("Document Text")
-if st.sidebar.button("Add to Knowledge Base") and new_doc:
-    with open("documents.json", "r+") as f:
-        data = json.load(f)
-        data.append(new_doc)
-        f.seek(0)
-        json.dump(data, f, indent=2)
-    st.sidebar.success("Document added! Please reload the page.")
+    st.subheader("Debug / Stats")
+    st.json(rag.get_stats())
