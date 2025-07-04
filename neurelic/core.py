@@ -25,7 +25,7 @@ class RAGSystem:
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         self.config     = ConfigManager(config)
-        logger.info("⚙️  Initialising RAGify …")
+        logger.info("⚙️  Initialising Neurelic …")
 
         self.embedding_manager = EmbeddingManager(self.config)
         self.retriever         = DocumentRetriever(self.config)
@@ -34,7 +34,7 @@ class RAGSystem:
 
         self.is_indexed     = False
         self.document_count = 0
-        logger.info("✅ RAGify ready")
+        logger.info("✅ Neurelic ready")
 
     # ---------- Indexing ----------
     def index_documents(
