@@ -1,7 +1,3 @@
-Here is the fully updated version with all mentions of **RAGify** replaced by **Neurelic** and adjusted for consistency (e.g., filenames, comments, and titles):
-
----
-
 # Neurelic
 
 *Intelligent Question-Answering with Retrieval-Augmented Generation*
