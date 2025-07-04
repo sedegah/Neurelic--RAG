@@ -9,14 +9,15 @@ logger = logging.getLogger(__name__)
 
 
 class EmbeddingManager:
-    """Sentence‑Transformers wrapper."""
+    """Neurelic: Embedding manager using Sentence-Transformers."""
 
     def __init__(self, config):
-        self.config      = config
-        self.model_name  = config.get("embedding_model", "paraphrase-MiniLM-L6-v2")
-        self.device      = config.get("device", "cuda" if torch.cuda.is_available() else "cpu")
+        self.config       = config
+        self.model_name   = config.get("embedding_model", "paraphrase-MiniLM-L6-v2")
+        self.device       = config.get("device", "cuda" if torch.cuda.is_available() else "cpu")
+        
         logger.info(f"🔌 Loading embedding model: {self.model_name}")
-        self.model       = SentenceTransformer(self.model_name).to(self.device)
+        self.model        = SentenceTransformer(self.model_name).to(self.device)
         self.embedding_dim = self.model.get_sentence_embedding_dimension()
         logger.info(f"✅ Embedder ready (dim={self.embedding_dim}, device={self.device})")
 
