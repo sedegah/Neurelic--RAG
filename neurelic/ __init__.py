@@ -1,13 +1,13 @@
 """
-RAGify – Intelligent Retrieval‑Augmented Generation
-==================================================
+Neurelic – Intelligent Retrieval‑Augmented Generation
+=====================================================
 A lightweight, modular RAG system that fuses FAISS‑based retrieval with
 transformer‑based response generation.
 """
 
 __version__      = "1.0.0"
-__author__       = "RAGify Team"
-__email__        = "contact@ragify.ai"
+__author__       = "Neurelic Team"
+__email__        = "contact@neurelic.ai"
 
 from .core       import RAGSystem
 from .embeddings import EmbeddingManager
