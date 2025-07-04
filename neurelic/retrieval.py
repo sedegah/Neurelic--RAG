@@ -1,4 +1,5 @@
-# ragify/retrieval.py
+# neurelic/retrieval.py
+
 import logging
 from typing import List, Tuple, Optional, Union
 from pathlib import Path
@@ -11,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 class DocumentRetriever:
-    """FAISS‑based similarity search engine."""
+    """Neurelic: FAISS‑based similarity search engine."""
 
     def __init__(self, config):
         self.config        = config
@@ -38,6 +39,7 @@ class DocumentRetriever:
             logger.info("⚡ Moving FAISS to GPU")
             res = faiss.StandardGpuResources()
             idx = faiss.index_cpu_to_gpu(res, 0, idx)
+
         return idx
 
     def index_documents(
@@ -51,8 +53,10 @@ class DocumentRetriever:
         if hasattr(self.index, "train"):
             self.index.train(embeddings.astype(np.float32))
         self.index.add(embeddings.astype(np.float32))
+
         self.documents    = docs
         self.document_ids = ids or [f"doc_{i}" for i in range(len(docs))]
+
         logger.info(f"✅ {self.index.ntotal} vectors indexed")
 
     def add_documents(
@@ -87,10 +91,10 @@ class DocumentRetriever:
         path = Path(path)
         faiss.write_index(self.index, str(path.with_suffix(".faiss")))
         meta = {
-            "documents":    self.documents,
-            "document_ids": self.document_ids,
+            "documents":     self.documents,
+            "document_ids":  self.document_ids,
             "embedding_dim": self.embedding_dim,
-            "config": self.config,
+            "config":        self.config,
         }
         with open(path.with_suffix(".pkl"), "wb") as f:
             pickle.dump(meta, f)
