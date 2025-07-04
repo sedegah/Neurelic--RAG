@@ -1,51 +1,57 @@
-#  RAGify
+Here is the fully updated version with all mentions of **RAGify** replaced by **Neurelic** and adjusted for consistency (e.g., filenames, comments, and titles):
+
+---
+
+# Neurelic
 
 *Intelligent Question-Answering with Retrieval-Augmented Generation*
 
-RAGify is a state-of-the-art Retrieval-Augmented Generation (RAG) system that revolutionizes how AI systems answer questions. By seamlessly combining document retrieval with advanced language generation, RAGify delivers accurate, contextually-aware responses that are grounded in your knowledge base.
+Neurelic is a state-of-the-art Retrieval-Augmented Generation (RAG) system that revolutionizes how AI systems answer questions. By seamlessly combining document retrieval with advanced language generation, Neurelic delivers accurate, contextually-aware responses that are grounded in your knowledge base.
 
-##  Key Features
+## Key Features
 
--  Semantic Understanding: Leverages Sentence-Transformers for deep semantic query understanding
--  Lightning-Fast Retrieval: FAISS-powered similarity search for instant document matching
--  Context-Aware Generation: GPT-2 integration for human-like, contextual responses
--  Highly Customizable: Easily adaptable to any domain or use case
--  Scalable Architecture: Handles large document collections efficiently
+* Semantic Understanding: Leverages Sentence-Transformers for deep semantic query understanding
+* Lightning-Fast Retrieval: FAISS-powered similarity search for instant document matching
+* Context-Aware Generation: GPT-2 integration for human-like, contextual responses
+* Highly Customizable: Easily adaptable to any domain or use case
+* Scalable Architecture: Handles large document collections efficiently
 
-##  How RAGify Works
+## How Neurelic Works
 
-RAGify transforms user questions into intelligent answers through a sophisticated 6-step process:
+Neurelic transforms user questions into intelligent answers through a sophisticated 6-step process:
 
-1. Query Input→ User submits a natural language question
-2. Semantic Encoding → Query vectorized using advanced embeddings
-3. Smart Retrieval → FAISS identifies most relevant documents
-4. Context Fusion → Query and documents merged for rich context
-5. Intelligent Generation → GPT-2 crafts contextual responses
-6. Natural Output → Human-readable answer delivered to user
+1. **Query Input** → User submits a natural language question
+2. **Semantic Encoding** → Query vectorized using advanced embeddings
+3. **Smart Retrieval** → FAISS identifies most relevant documents
+4. **Context Fusion** → Query and documents merged for rich context
+5. **Intelligent Generation** → GPT-2 crafts contextual responses
+6. **Natural Output** → Human-readable answer delivered to user
 
-##  Quick Start
+## Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- 8GB+ RAM recommended
-- CUDA-compatible GPU (optional, for faster processing)
+
+* Python 3.8+
+* 8GB+ RAM recommended
+* CUDA-compatible GPU (optional, for faster processing)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/sedegah/RAGify.git
-cd RAGify
+git clone https://github.com/sedegah/Neurelic.git
+cd Neurelic
 
 # Create virtual environment (recommended)
-python -m venv ragify-env
-source ragify-env/bin/activate  # On Windows: ragify-env\Scripts\activate
+python -m venv neurelic-env
+source neurelic-env/bin/activate  # On Windows: neurelic-env\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
 ### Core Dependencies
+
 ```
 transformers>=4.21.0    # GPT-2 model support
 sentence-transformers   # Semantic embeddings
@@ -54,12 +60,12 @@ torch>=1.12.0          # PyTorch backend
 numpy>=1.21.0          # Numerical operations
 ```
 
-##  Usage Examples
+## Usage Examples
 
 ### Basic Implementation
 
 ```python
-from ragify import RAGSystem
+from neurelic import RAGSystem
 
 # Initialize the system
 rag = RAGSystem()
@@ -82,7 +88,7 @@ print(f"Answer: {response}")
 ### Advanced Configuration
 
 ```python
-from ragify import RAGSystem
+from neurelic import RAGSystem
 
 # Custom configuration
 config = {
@@ -106,7 +112,7 @@ for q, r in zip(queries, responses):
     print(f"Q: {q}\nA: {r}\n{'-'*50}")
 ```
 
-##  System Architecture
+## System Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -126,9 +132,10 @@ for q, r in zip(queries, responses):
                        └──────────────────┘
 ```
 
-##  Use Cases
+## Use Cases
 
-###  Customer Support Automation
+### Customer Support Automation
+
 ```python
 # Load FAQ and help articles
 support_docs = load_support_documents()
@@ -140,7 +147,8 @@ response = rag.query(customer_query)
 # Output: "To reset your password, go to Settings > Account > Password Reset..."
 ```
 
-###  Educational Q&A System
+### Educational Q\&A System
+
 ```python
 # Index textbooks and educational content
 educational_content = load_textbooks()
@@ -151,7 +159,8 @@ response = rag.query("Explain photosynthesis process")
 # Output: Detailed explanation from indexed educational materials
 ```
 
-###  Research Assistant
+### Research Assistant
+
 ```python
 # Index research papers and publications
 research_papers = load_research_corpus()
@@ -162,9 +171,10 @@ response = rag.query("Latest developments in quantum computing")
 # Output: Synthesized insights from multiple research sources
 ```
 
-##  Advanced Configuration
+## Advanced Configuration
 
 ### Custom Model Integration
+
 ```python
 # Use different language models
 config = {
@@ -175,6 +185,7 @@ config = {
 ```
 
 ### Performance Optimization
+
 ```python
 # Optimize for large document collections
 config = {
@@ -185,15 +196,15 @@ config = {
 }
 ```
 
-##  Performance Metrics
+## Performance Metrics
 
 | Dataset Size | Query Time | Memory Usage | Accuracy |
-|-------------|------------|--------------|----------|
-| 1K docs     | 0.1s       | 2GB         | 92%      |
-| 10K docs    | 0.3s       | 4GB         | 89%      |
-| 100K docs   | 0.8s       | 12GB        | 87%      |
+| ------------ | ---------- | ------------ | -------- |
+| 1K docs      | 0.1s       | 2GB          | 92%      |
+| 10K docs     | 0.3s       | 4GB          | 89%      |
+| 100K docs    | 0.8s       | 12GB         | 87%      |
 
-##  Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
@@ -203,24 +214,26 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 4. Push to the branch (`git push origin feature/feature`)
 5. Open a Pull Request
 
-##  License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-##  Acknowledgments
+## Acknowledgments
 
-- **[Hugging Face](https://huggingface.co/)** - Transformers library and pre-trained models
-- **[Sentence-Transformers](https://www.sbert.net/)** - Semantic text embeddings
-- **[Facebook AI](https://github.com/facebookresearch/faiss)** - FAISS similarity search engine
-- **Open Source Community** - For continuous inspiration and contributions
+* **[Hugging Face](https://huggingface.co/)** - Transformers library and pre-trained models
+* **[Sentence-Transformers](https://www.sbert.net/)** - Semantic text embeddings
+* **[Facebook AI](https://github.com/facebookresearch/faiss)** - FAISS similarity search engine
+* **Open Source Community** - For continuous inspiration and contributions
 
 ## Support
--  Issues: [GitHub Issues](https://github.com/sedegah/RAGify/issues)
+
+* Issues: [GitHub Issues](https://github.com/sedegah/Neurelic/issues)
 
 ---
 
 <div align="center">
 
-** Star this repository if RAGify helped you build amazing AI applications! **
+**⭐ Star this repository if Neurelic helped you build amazing AI applications! ⭐**
 
 </div>
+
