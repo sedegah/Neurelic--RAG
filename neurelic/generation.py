@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 class ResponseGenerator:
-    """GPT‑2 (or compatible) text generator."""
+    """Neurelic: GPT‑2 (or compatible) based response generator."""
 
     def __init__(self, config):
         self.config      = config
@@ -16,9 +16,10 @@ class ResponseGenerator:
         self.max_length  = config.get("max_response_length", 150)
         self.device      = config.get("device", "cuda" if torch.cuda.is_available() else "cpu")
 
-        logger.info(f"🔌 Loading generator: {self.model_name}")
+        logger.info(f"🔌 Loading generator model: {self.model_name}")
         self.tokenizer   = GPT2Tokenizer.from_pretrained(self.model_name)
         self.model       = GPT2LMHeadModel.from_pretrained(self.model_name).to(self.device)
+        
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
@@ -32,7 +33,13 @@ class ResponseGenerator:
         relevance_scores: Optional[List[float]] = None,
     ) -> str:
         context = self._build_context(query, context_documents, relevance_scores)
-        inputs  = self.tokenizer.encode(context, return_tensors="pt", max_length=512, truncation=True).to(self.device)
+        inputs  = self.tokenizer.encode(
+            context,
+            return_tensors="pt",
+            max_length=512,
+            truncation=True
+        ).to(self.device)
+
         with torch.no_grad():
             output = self.model.generate(
                 inputs,
@@ -43,12 +50,13 @@ class ResponseGenerator:
                 pad_token_id=self.tokenizer.eos_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
             )
+
         full = self.tokenizer.decode(output[0], skip_special_tokens=True)
         reply = full[len(context):].strip()
         return self._clean(reply)
 
     # ---------- Helpers ----------
-    def _build_context(self, query, docs, scores):
+    def _build_context(self, query: str, docs: List[str], scores: Optional[List[float]]) -> str:
         parts = ["Context:"]
         for i, d in enumerate(docs[:3]):
             snippet = d[:200] + "…" if len(d) > 200 else d
