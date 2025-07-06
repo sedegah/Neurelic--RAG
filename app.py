@@ -1,9 +1,9 @@
-# app.py  (Streamlit demo for the new package)
+# app.py
 import json
 import streamlit as st
-from ragify import RAGSystem
+from neurelic import RAGSystem
 
-st.set_page_config(page_title="RAGify Demo", layout="wide")
+st.set_page_config(page_title="Neurelic Demo", layout="wide")
 
 # --- Initialise system & index ---
 rag  = RAGSystem()                      # default config
@@ -11,7 +11,7 @@ docs = json.load(open("documents.json"))
 rag.index_documents(docs)
 
 # --- UI ---
-st.title("🔍 RAGify – Ask your knowledge base")
+st.title("🔍 Neurelic – Ask your knowledge base")
 query = st.text_input("Enter your question:")
 
 if query:
