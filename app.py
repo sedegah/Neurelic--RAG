@@ -1,7 +1,7 @@
 # app.py
 import json
 import streamlit as st
-from neurelic.core import RAGSystem
+from neurelic import RAGSystem
 
 st.set_page_config(page_title="Neurelic Demo", layout="wide")
 
