@@ -1,5 +1,3 @@
-# neurelic/utils.py
-
 import logging, re, json
 from typing import List, Dict, Any, Optional
 from pathlib import Path
@@ -49,7 +47,7 @@ class DocumentProcessor:
 class ConfigManager:
     """Neurelic: Thin wrapper for merging user config with sensible defaults."""
 
-      DEFAULT = {
+    DEFAULT = {
         "embedding_model":     "paraphrase-MiniLM-L6-v2",
         "model_name":          "gpt2",
         "top_k_documents":     3,
@@ -58,5 +56,13 @@ class ConfigManager:
         "device":              "auto",  # cpu / cuda / auto
         "faiss_index_type":    "Flat",  # Flat / IVF
         "use_gpu_faiss":       False,
-        "cache_embeddings":    False,   
+        "cache_embeddings":    False,   # ✅ FIXED
     }
+
+    def __init__(self, config: Optional[Dict[str, Any]] = None):
+        self.config = self.DEFAULT.copy()
+        if config:
+            self.config.update(config)
+
+    def get(self, key: str, default: Any = None) -> Any:
+        return self.config.get(key, default)
