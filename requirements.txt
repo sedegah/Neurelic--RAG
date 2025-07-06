@@ -1,0 +1,5 @@
+streamlit
+faiss-cpu
+torch
+sentence-transformers
+transformers
