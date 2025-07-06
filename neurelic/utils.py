@@ -56,7 +56,7 @@ class ConfigManager:
         "device":              "auto",  # cpu / cuda / auto
         "faiss_index_type":    "Flat",  # Flat / IVF
         "use_gpu_faiss":       False,
-        "cache_embeddings":    False,   # ✅ FIXED
+        "cache_embeddings":    False,   
     }
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
