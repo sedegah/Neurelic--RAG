@@ -11,7 +11,7 @@ docs = json.load(open("documents.json"))
 rag.index_documents(docs)
 
 # --- UI ---
-st.title("🔍 Neurelic – Ask your knowledge base")
+st.title("Neurelic – Ask your knowledge base")
 query = st.text_input("Enter your question:")
 
 if query:
