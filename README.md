@@ -1,12 +1,9 @@
 
----
-
-```markdown
 # Neurelic – RAG-Powered Knowledge Assistant
 
 Neurelic is a **Retrieval-Augmented Generation (RAG)** system designed to provide smart, context-aware responses by combining document retrieval with advanced language generation. Built using a modular architecture, Neurelic enables querying large document sets using semantic search and delivers AI-generated answers powered by transformer models.
 
-> 🔍 Ask questions. 📄 Search documents. 🤖 Get intelligent answers.
+>  Ask questions.  Search documents.  Get intelligent answers.
 
 ---
 
@@ -17,27 +14,6 @@ Neurelic is a **Retrieval-Augmented Generation (RAG)** system designed to provid
 -  **Multi-format Document Support** – Easily index and query JSON or raw text docs.
 -  **Modular Architecture** – Pluggable components for embeddings, retrieval, and generation.
 -  **Streamlit UI** – Simple, responsive interface for user-friendly querying.
-
----
-
-##  Project Structure
-
-```
-
-Neurelic--RAG/
-├── app.py                # Streamlit frontend
-├── documents.json        # Sample documents to index
-├── neurelic/
-│   ├── **init**.py
-│   ├── embeddings.py     # EmbeddingManager using SentenceTransformers
-│   ├── retrieval.py      # FAISS-based semantic search
-│   ├── generation.py     # ResponseGenerator using Hugging Face models
-│   ├── utils.py          # Document preprocessor & configuration
-│   └── config.json       # Paths and model settings
-├── requirements.txt
-└── README.md
-
-````
 
 ---
 
