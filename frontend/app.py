@@ -4,7 +4,7 @@ import requests
 BACKEND_URL = "http://localhost:8000"
 
 st.set_page_config(page_title="RAG System", layout="wide")
-st.title("📄 Retrieval-Augmented Generation (RAG) System")
+st.title("Neurelic – RAG-Powered Knowledge Assistant ")
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
