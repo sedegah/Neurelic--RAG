@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env
+
+# FAISS index and metadata
+backend/faiss_index.index*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+frontend/.streamlit/
+
+# Jupyter
+*.ipynb_checkpoints
+
+# VSCode
+.vscode/
