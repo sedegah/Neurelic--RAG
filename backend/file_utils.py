@@ -9,7 +9,6 @@ from PIL import Image
 import pytesseract
 import io
 
-# Helper to chunk text (simple split, can be improved)
 def chunk_text(text: str, chunk_size: int = 500) -> List[str]:
     return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
 
@@ -33,7 +32,6 @@ def parse_file(file_path: str) -> List[Dict]:
     chunks = []
     if ext == '.pdf':
         elements = partition_pdf(filename=file_path)
-        # If no text extracted, fallback to OCR
         if not elements or all(not el.text.strip() for el in elements):
             try:
                 return ocr_pdf_file(file_path)
