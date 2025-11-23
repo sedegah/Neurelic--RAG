@@ -6,7 +6,6 @@ from .rag_engine import process_documents, answer_query
 
 app = FastAPI()
 
-# Allow CORS for local Streamlit frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
